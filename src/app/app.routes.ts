@@ -4,7 +4,8 @@ export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'courses' },
   {
     path: 'courses',
-    // Caminho correto no plural:
+    title: 'Cursos',
     loadComponent: () => import('./courses/courses').then(m => m.Courses)
-  }
+  },
+  { path: '**', redirectTo: 'courses' }
 ];
